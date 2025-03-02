@@ -18,8 +18,6 @@ ui_page 'ui/ui.html'
 
 files {
     'ui/ui.html',
-    'ui/images/*.jpg',
-    'ui/images/*.png',
     'ui/audio/*.ogg',
     'ui/audio/*.mp3',
     'ui/audio/*.wav',
