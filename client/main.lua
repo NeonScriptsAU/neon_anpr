@@ -80,7 +80,7 @@ function RenderVehicleInfo(vehicle)
     local vehname = GetLabelText(GetDisplayNameFromVehicleModel(model)) or "Unknown Model"
     local licenseplate = GetVehicleNumberPlateText(vehicle) or "Unknown Plate"
     local passNum = GetVehicleNumberOfPassengers(vehicle)
-    local primary, secondary = GetVehicleColorName(vehicle)
+    local primary = GetVehicleColorName(vehicle)
 
     if not IsVehicleSeatFree(vehicle, -1) then
         passNum = passNum + 1
