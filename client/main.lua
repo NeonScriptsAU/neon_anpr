@@ -12,6 +12,15 @@ local snail = "not 🐌"
 local displayplate = false
 local ScanningDistance = Config.ScanDistance
 
+function HasValue(tbl, val)
+    for _, v in ipairs(tbl) do
+        if v == val then
+            return true
+        end
+    end
+    return false
+end
+
 RegisterCommand(Config.Command, function()
     local playerJob = nil
 
@@ -22,7 +31,7 @@ RegisterCommand(Config.Command, function()
         playerJob = ESX.GetPlayerData().job.name
     end
 
-    if not Config.Jobs[playerJob] then
+    if not HasValue(Config.Jobs, playerJob) then
         lib.notify({
             id = 'core',
             title = 'Access Denied',
@@ -43,6 +52,7 @@ RegisterCommand(Config.Command, function()
             iconColor = '#d1d1d1'
         })
         scanning = false
+        displayplate = false
         snail = "not 🐌"
     else
         lib.notify({
